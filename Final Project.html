@@ -1,0 +1,111 @@
+<html>
+<head>
+<title>Veronica's Bakery</title>
+<h2>Veronica's Bakery</h2>
+<style>
+h2 {
+font-family: Mistral; 20px;
+color: #0a295c;
+}
+  body{
+  font-family: Verdana;
+  font-size: 20px;
+  }
+    table {
+      border-collapse: collapse;
+    }
+    th, td {
+      border: 2px solid red;
+      padding: 12px;
+    }
+</style>
+
+<script language ="JavaScript">
+
+function Add()
+{
+var p = document.myform.price.value;
+	quan = document.myform.quantity.value;
+	p2 = document.myform.price2.value;
+	quan2 = document.myform.quantity2.value;
+	p3 = document.myform.price3.value;
+	quan3 = document.myform.quantity3.value;
+	
+	cash = document.myform.ag.value;
+	total = p*quan;
+	total2 = p2*quan2;
+	total3 = p3*quan3;
+	
+	finaltotal = total + total2 + total3;
+	document.myform.Total3.value=finaltotal;
+	
+	change=cash-finaltotal;
+	document.myform.change.value=change;
+	
+	alert("Thank you for ordering. Your total amount is: " + finaltotal +" Your change is: " +change);
+}
+function Clears()
+{
+document.myform.quantity.value="";
+document.myform.quantity2.value="";
+document.myform.quantity3.value="";
+document.myform.ag.value="";
+document.myform.change.value="";
+document.myform.Total3.value="";
+}
+
+</script>
+</head>
+
+<body>
+<form name=myform>
+<table border=1>
+<tr>
+<th>Item name
+<th>Price
+<th>Quantity
+</tr>
+
+<tr>
+<td>Cheesecake<br></br>P 350 Whole
+<img src="C:\Users\ronald r. ortuoste\Documents\WBD FINALS\oreocheesecake-2-1.jpg" width="200" height="200">
+<td><input type="text" name=price value="350" disabled>
+<td>Quantity<input type="text" name=quantity value="">
+</tr>
+
+<tr>
+<td>Brownies<br></br>P 220 per Box
+<img src="C:\Users\ronald r. ortuoste\Documents\WBD FINALS\homemade-fudge-brownies-3.jpg" width="200" height="200">
+<td><input type="text" name=price2 value="220" disabled>
+<td>Quantity<input type="text" name=quantity2 value="">
+</tr>
+
+<tr>
+<td>Butterscotch<br></br>P 200 per Box
+<img src="C:\Users\ronald r. ortuoste\Documents\WBD FINALS\butterscotch-brownies-h2.jpg" width="200" height="200">
+<td><input type="text" name=price3 value="200" disabled>
+<td>Quantity<input type="text" name=quantity3 value="">
+</tr>
+
+<tr>
+<td colspan=2>TOTAL:
+<td><input type="text" name=Total3 value="" disabled>
+</tr>
+
+<tr>
+<td>Amount Given:
+<td><input type="text" name=ag value="">
+</tr>
+
+<tr>
+<td>Change:
+<td><input type="text" name=change value="" disabled>
+</tr>
+
+<tr>
+<td align=center colspan=3><input type="Button" value="Check Out" onClick="Add()">
+<input type="Button" value="New Order" onClick="Clears()">
+</tr
+</form>
+</body>
+</html>
